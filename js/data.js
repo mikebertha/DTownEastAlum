@@ -239,7 +239,7 @@ const DOCKET_2026 = [
   },
   {
     title: "Weekly high-scorer bonus",
-    detail: "Top scorer of the week earns bonus money, including postseason. On the 2026 ballot. Not yet decided.",
+    detail: "Top scorer of the week earns bonus money, including postseason. On the 2026 ballot. Not yet decided. If adopted, the full payout structure needs to be adjusted to account for it.",
   },
 ];
 
