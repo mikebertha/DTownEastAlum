@@ -1,4 +1,4 @@
-const CACHE_NAME = "dtown-east-alum-v3";
+const CACHE_NAME = "dtown-east-alum-v4";
 const PRECACHE_URLS = [
   "./",
   "index.html",
