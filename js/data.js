@@ -109,12 +109,12 @@ const CONSTITUTION_ARTICLES = [
     rows: [
       { label: "Base cap", value: "$200 flat per owner, every year" },
       { label: "Per-owner floor / ceiling", value: "$170 min · $230 max" },
-      { label: "Trade-adjusted cap", value: "† $200 ± net budget dollars traded between drafts, capped at $30 cumulative per season (not per trade)" },
+      { label: "Trade-adjusted cap", value: "† $200 ± net budget dollars traded between drafts, capped at $30 cumulative per season" },
       { label: "Live draft budget", value: "Trade-adjusted cap minus total keeper cost" },
     ],
     notes: [
       "Per-owner $170/$230 bounds ratified 2019, for the 2020 season.",
-      "† Trade cap: the 2019 vote set a $50 cumulative-per-season cap. Mike recalls it was later reduced to $30 — that's the working number, consistent with every real trade on file, but the exact vote isn't in the paper record.",
+      "† Trade cap: the 2019 vote set it at $50. Mike recalls it was later reduced to $30 — that's the working number, but the exact vote isn't in the paper record.",
     ],
   },
   {
