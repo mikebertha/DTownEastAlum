@@ -109,12 +109,12 @@ const CONSTITUTION_ARTICLES = [
     rows: [
       { label: "Base cap", value: "$200 flat per owner, every year" },
       { label: "Per-owner floor / ceiling", value: "$170 min · $230 max" },
-      { label: "Trade-adjusted cap", value: "† $200 ± net budget dollars traded between drafts, capped at $30/trade" },
+      { label: "Trade-adjusted cap", value: "† $200 ± net budget dollars traded between drafts, capped at $30 cumulative per season (not per trade)" },
       { label: "Live draft budget", value: "Trade-adjusted cap minus total keeper cost" },
     ],
     notes: [
       "Per-owner $170/$230 bounds ratified 2019, for the 2020 season.",
-      "† Trade cap: the 2019 vote set a $50 single-trade cap. Mike recalls it was later reduced to $30 — that's the working number, consistent with every real trade on file, but the exact vote isn't in the paper record.",
+      "† Trade cap: the 2019 vote set a $50 cumulative-per-season cap. Mike recalls it was later reduced to $30 — that's the working number, consistent with every real trade on file, but the exact vote isn't in the paper record.",
     ],
   },
   {
@@ -155,8 +155,8 @@ const CONSTITUTION_ARTICLES = [
   {
     title: "Scoring — offense",
     rows: [
-      { label: "Passing", value: "20 yds/pt (bonus at 300/400/500 yds) · TD = 6 · INT = -2" },
-      { label: "Rushing / receiving", value: "10 yds/pt (bonus at 100/150/200 yds) · TD = 6" },
+      { label: "Passing", value: "20 yds/pt · +3 at 300 yds, +4 at 400 yds, +5 at 500 yds · TD = 6 · INT = -2" },
+      { label: "Rushing / receiving", value: "10 yds/pt · +2 at 100 yds, +3 at 150 yds, +4 at 200 yds · TD = 6" },
       { label: "Receptions", value: "Full PPR — 1 pt/reception" },
       { label: "40+ yard TD bonus", value: "+2 (passing, rushing, receiving)" },
       { label: "Fumbles lost", value: "-2" },
