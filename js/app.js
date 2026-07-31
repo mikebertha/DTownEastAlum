@@ -247,11 +247,18 @@ function settingsGroupHTML(rows) {
     .join("");
 }
 
-function proseHTML(paragraphs) {
-  if (!paragraphs || !paragraphs.length) return "";
-  return paragraphs
-    .map((p) => `<p class="helper-note" style="margin:8px 0 0;">${p}</p>`)
-    .join("");
+// Collapsed by default - historical/background context lives here, not
+// inline with the active rule. Only rendered if an article has notes.
+function notesHTML(notes) {
+  if (!notes || !notes.length) return "";
+  return `
+    <details class="notes-toggle">
+      <summary>Why &amp; history</summary>
+      <div class="notes-list">
+        ${notes.map((n) => `<p>${n}</p>`).join("")}
+      </div>
+    </details>
+  `;
 }
 
 function statusBadge(status) {
@@ -271,7 +278,7 @@ function renderConstitution() {
       <h2 class="section-title">${a.title}</h2>
       <div class="card">
         ${settingsGroupHTML(a.rows)}
-        ${proseHTML(a.prose)}
+        ${notesHTML(a.notes)}
       </div>
     `
   ).join("");
@@ -306,16 +313,16 @@ function renderConstitution() {
 
   app.innerHTML = `
     <h1 class="section-title">Constitution</h1>
-    <p class="helper-note">The living rulebook: Yahoo's current settings, every ratified rule change since 2017, and what's still being decided. Ratified rules are folded into the articles below; anything still in play is in "On the docket." The full year-by-year vote record is at the bottom for reference.</p>
+    <p class="helper-note">How the league runs today. Tap "Why &amp; history" under any section for background; tap a season below for the full vote record.</p>
 
     ${articlesHTML}
 
     <h2 class="section-title">On the docket for 2026</h2>
-    <p class="helper-note" style="margin-bottom:8px;">Open items the league needs to formally resolve this cycle — not yet part of the ratified rules above.</p>
+    <p class="helper-note" style="margin-bottom:8px;">Not yet ratified — still in play this cycle.</p>
     ${docketHTML}
 
     <h2 class="section-title">Full proposal archive</h2>
-    <p class="helper-note" style="margin-bottom:8px;">Every proposal on record, 2017-2025, color-coded by outcome. Tap a season to expand.</p>
+    <p class="helper-note" style="margin-bottom:8px;">Every proposal on record, 2017-2025, color-coded by outcome.</p>
     ${archiveHTML}
   `;
 }

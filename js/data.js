@@ -74,9 +74,16 @@ const RECENT_TRADES = [
 // 2026 Scoring & Settings page, the full "Fantasy Rules for Vote" record
 // (proposals 2017-2025, color-coded green/PASSED or red/REJECTED in the
 // source document), and direct confirmation from Mike on anything the
-// paper record left ambiguous. Rows flagged "(pending confirmation)" are
-// working assumptions, not sourced fact - call those out plainly rather
-// than presenting them as settled. See PROPOSAL_HISTORY below for the
+// paper record left ambiguous.
+//
+// Design intent: this reads as a quick-consult reference to how the league
+// runs *right now* - row values are the current rule, full stop, no dates
+// or vote history mixed in. Anything historical (when a rule changed, what
+// it replaced, why) lives in that article's `notes` array, rendered as a
+// collapsed "Why & history" disclosure - visible only if someone digs in.
+// A leading "†" on a row value flags a live open question (not history -
+// something still unconfirmed that affects how the rule works today);
+// the notes explain what's unresolved. See PROPOSAL_HISTORY below for the
 // full year-by-year paper trail these articles are distilled from.
 const CONSTITUTION_ARTICLES = [
   {
@@ -101,34 +108,40 @@ const CONSTITUTION_ARTICLES = [
     title: "Draft & budget",
     rows: [
       { label: "Base cap", value: "$200 flat per owner, every year" },
-      { label: "Per-owner floor / ceiling", value: "$170 min · $230 max (ratified 2019, for the 2020 season)" },
-      { label: "Trade-adjusted cap", value: "$200 ± net budget dollars traded between drafts, capped at $30/trade (pending confirmation)" },
+      { label: "Per-owner floor / ceiling", value: "$170 min · $230 max" },
+      { label: "Trade-adjusted cap", value: "† $200 ± net budget dollars traded between drafts, capped at $30/trade" },
       { label: "Live draft budget", value: "Trade-adjusted cap minus total keeper cost" },
     ],
-    prose: [
-      "The 2019 vote that set the $170/$230 bounds also capped single-trade budget transfers at $50. Mike's recollection is that the cap was later reduced — $30 is what's currently documented and consistent with every real trade on file, but the exact vote isn't in the paper record. Treat $30 as the working number until someone can confirm it against old league emails or minutes.",
+    notes: [
+      "Per-owner $170/$230 bounds ratified 2019, for the 2020 season.",
+      "† Trade cap: the 2019 vote set a $50 single-trade cap. Mike recalls it was later reduced to $30 — that's the working number, consistent with every real trade on file, but the exact vote isn't in the paper record.",
     ],
   },
   {
     title: "Keepers",
     rows: [
-      { label: "Keeper eligibility", value: "Tied to the player, not the draft year — a keeper can be kept indefinitely (ratified 2018)" },
-      { label: "Escalating keeper fee (2024+)", value: "Prior salary + (6 + total keepers designated that year), applied to every keeper" },
-      { label: "Waiver/FA-acquired player salary", value: "Flat $25 baseline for any player without a salary from a prior draft" },
+      { label: "Keeper eligibility", value: "Tied to the player, not the draft year — kept indefinitely" },
+      { label: "Keeper fee", value: "Prior salary + (6 + total keepers designated that year), applied to every keeper" },
+      { label: "Waiver/FA-acquired player salary", value: "Flat $25 for any player without a salary from a prior draft" },
     ],
-    prose: [
-      "Before 2024, a kept player's price simply stayed at its original draft salary forever — no escalation. The escalating fee (prior salary + 6, plus 1 more per additional keeper that owner carries that year) was ratified in 2023 for the 2024 season, submitted as \"Option 1\" against a flatter \"Option 2\" that was rejected.",
-      "A 2023 proposal to instead base a waiver/FAAB pickup's keeper salary on what was actually spent to acquire them was rejected. The rule already on the books stands: any player kept without a prior draft salary carries a flat $25.",
+    notes: [
+      "Keeper-for-life rule ratified 2018.",
+      "Escalating fee ratified 2023, for the 2024 season ('Option 1', beating a flatter 'Option 2'). Before that, a kept player's price just stayed at its original salary forever.",
+      "A 2023 proposal to base waiver-pickup salary on FAAB spend instead was rejected — the $25 flat rule stands.",
     ],
   },
   {
     title: "Trades",
     rows: [
       { label: "Review", value: "Commissioner review, 1-day reject window" },
-      { label: "Weekly completion", value: "Trades must clear by Wednesday, ahead of Thursday Night Football (moved from Saturday, ratified 2022)" },
+      { label: "Weekly completion", value: "Must clear by Wednesday, ahead of Thursday Night Football" },
       { label: "Season deadline", value: "Nov 28, 2026" },
       { label: "Draft-pick trades", value: "Not allowed" },
-      { label: "Protected-player floor", value: "Any player on Yahoo's \"can't cut\" list can't be traded/sold for under $15; commissioner has automatic veto power over trades that undervalue them (ratified 2019)" },
+      { label: "Protected-player floor", value: "Any player on Yahoo's \"can't cut\" list can't be traded/sold for under $15; commissioner has automatic veto power over trades that undervalue them" },
+    ],
+    notes: [
+      "Wednesday deadline moved from Saturday, ratified 2022.",
+      "$15 protected-player floor ratified 2019.",
     ],
   },
   {
@@ -142,82 +155,91 @@ const CONSTITUTION_ARTICLES = [
   {
     title: "Scoring — offense",
     rows: [
-      { label: "Passing", value: "20 yds/pt (bonus at 300/400/500 yds) · TD = 6 · INT = -2 (moved from -1 in 2022, to match the defensive reward)" },
+      { label: "Passing", value: "20 yds/pt (bonus at 300/400/500 yds) · TD = 6 · INT = -2" },
       { label: "Rushing / receiving", value: "10 yds/pt (bonus at 100/150/200 yds) · TD = 6" },
       { label: "Receptions", value: "Full PPR — 1 pt/reception" },
       { label: "40+ yard TD bonus", value: "+2 (passing, rushing, receiving)" },
       { label: "Fumbles lost", value: "-2" },
       { label: "2-point conversion", value: "2" },
     ],
+    notes: ["INT moved from -1 to -2 in 2022, to match the defensive reward."],
   },
   {
     title: "Scoring — kickers & defense",
     rows: [
-      { label: "Kicker", value: "PAT = 1 · field goals scored by total yards, 10 yds/pt (decimal scoring ratified 2020)" },
+      { label: "Kicker", value: "PAT = 1 · field goals scored by total yards, 10 yds/pt" },
       { label: "Defense/ST", value: "Sack = 1 · INT = 2 · Fumble rec. = 2 · TD = 6 · Safety = 6 · Block kick = 2" },
       { label: "Points allowed", value: "0=10, 1-6=7, 7-13=4, 14-20=1, 21-27=0, 28+=0 (never negative)" },
     ],
+    notes: ["Decimal kicker scoring ratified 2020 (previously whole points only)."],
   },
   {
     title: "Playoffs",
     rows: [
-      { label: "Format", value: "Top 6 teams · weeks 15, 16, 17 (moved from a 4-team field in 2019)" },
+      { label: "Format", value: "Top 6 teams · weeks 15, 16, 17" },
       { label: "Tiebreaker", value: "Best regular-season record vs. opponent wins" },
     ],
+    notes: ["Moved from a 4-team to 6-team field in 2019."],
   },
   {
     title: "Buy-in, payouts & traditions",
     rows: [
-      { label: "Buy-in", value: "$200 per owner (doubled from prior years, first effective 2026 season)" },
+      { label: "Buy-in", value: "$200 per owner" },
       { label: "Payouts", value: "Doubled league-wide alongside the buy-in increase" },
-      { label: "Last-place penalty", value: "\"The Combine\" — the last-place finisher completes the full NFL combine testing process (ratified 2024)" },
-      { label: "Trophy custody", value: "See below — ratified in principle 2024, exact process confirmed directly by Mike, formal language still pending a 2026 vote" },
+      { label: "Last-place penalty", value: "\"The Combine\" — the last-place finisher completes the full NFL combine testing process" },
+      { label: "Trophy custody", value: "Reigning champion holds the trophy through the following season. When a new champion is crowned, the outgoing champion delivers it to that season's last-place finisher, who has it engraved and delivers it to the new champion." },
     ],
-    prose: [
-      "Trophy chain of custody: the reigning champion holds the trophy through the following season. When that season ends and a new champion is crowned, the outgoing champion delivers the trophy to that season's last-place finisher. Last place has it engraved, then delivers it to the new champion — who holds it through the next season, and the cycle repeats. The 2024 vote established that last place handles the engraving and exchange, but the exact custody chain above was worked out informally over the following offseason rather than voted on directly — it's accurate, but not yet codified.",
+    notes: [
+      "$200 buy-in / doubled payouts ratified 2024, first effective this season.",
+      "Last-place penalty ('The Combine') ratified 2024 — Mike doesn't expect strict follow-through in practice.",
+      "Trophy custody ratified in principle 2024; the exact hand-off order was worked out informally afterward, not itself voted on (see On the docket below).",
     ],
   },
   {
     title: "Governance & amendments",
     rows: [
       { label: "Proposal cycle", value: "Annual, ahead of each season's draft" },
-      { label: "Three-strikes rule", value: "A proposal rejected 3 times cannot be brought back for a vote (ratified 2022)" },
-      { label: "Ratification threshold", value: "Believed to require a firm majority (at least 7 of 12) — pending Mike's confirmation" },
-      { label: "Tied votes", value: "Treated as a rejection, per precedent (2017 tiebreaker proposal)" },
+      { label: "Three-strikes rule", value: "A proposal rejected 3 times cannot be brought back for a vote" },
+      { label: "Ratification threshold", value: "† Believed to require a firm majority (at least 7 of 12)" },
+      { label: "Tied votes", value: "Treated as a rejection" },
     ],
-    prose: [
-      "One live wrinkle on the three-strikes rule: the source document itself labels the 2024 rejection of a kicker-removal proposal as the \"SECOND STRIKE,\" which — if the count started with the very same 2022 vote that created the rule — would make 2024 strike two and put the 2024-for-2025 rejection at strike three, meaning this year's kicker-related proposal would already be barred. Mike's recollection is that only two attempts have been made since the rule took effect, making this year's the third and deciding one. Worth settling which reading is correct before the vote goes out.",
+    notes: [
+      "Three-strikes rule ratified 2022.",
+      "† Threshold isn't stated in the source document — pending Mike's confirmation of the real number.",
+      "† The source document labels the 2024 kicker-removal rejection \"SECOND STRIKE.\" If strikes started counting at the 2022 rule itself, 2024 would be strike three and bar this year's kicker proposal outright. Mike believes only two attempts have occurred since the rule took effect, making this year's the deciding third — worth settling before the vote goes out.",
+      "Tied-vote-as-rejection precedent set 2017.",
     ],
   },
 ];
 
 // Rules the league is actively deciding or needs to formally resolve this
 // cycle - distinct from the ratified articles above. This is the section
-// that keeps the document "living" rather than a static snapshot.
+// that keeps the document "living" rather than a static snapshot. Kept
+// terse by design — one line of what it is, one line of what's needed.
 const DOCKET_2026 = [
   {
     title: "League Rivals — implement or repeal",
-    detail: "Ratified in 2022 for the 2023 season (schedule opens against a designated rival, rematch in week 12 as \"rivalry week,\" rivals set by the commissioner), but never actually built into a schedule. Was a point of contention last season. Needs either real rivalry pairings this year or a formal vote to repeal it.",
+    detail: "Ratified 2022, never implemented in the schedule. Needs real rivalry pairings this year, or a vote to repeal it.",
   },
   {
     title: "Trophy custody — formal language",
-    detail: "The champion-to-last-place-to-new-champion chain (see Buy-in, payouts & traditions above) has been running on informal agreement since 2024. Needs codified language put to a vote this cycle to remove any ambiguity.",
+    detail: "Chain of custody (see Buy-in, payouts & traditions) has run on informal agreement since 2024. Needs codified language and a vote this cycle.",
   },
   {
     title: "Remove all computers for the draft — pen and paper only",
-    detail: "On the 2025 ballot for the 2026 season. Not yet decided.",
+    detail: "On the 2026 ballot. Not yet decided.",
   },
   {
     title: "Remove kicker, or require starting 2 QBs",
-    detail: "On the 2025 ballot for the 2026 season. Not yet decided — see the three-strikes note under Governance above; there's a real question of whether this proposal is even eligible for a vote.",
+    detail: "On the 2026 ballot. May already be barred by the three-strikes rule — see Governance notes.",
   },
   {
     title: "Most Points For gets the 6th playoff spot",
-    detail: "If the Most-Points-For team isn't already in the top 6, they'd claim the last playoff spot. On the 2025 ballot for the 2026 season. Not yet decided.",
+    detail: "If not already in the top 6. On the 2026 ballot. Not yet decided.",
   },
   {
     title: "Weekly high-scorer bonus",
-    detail: "Top scorer of the week earns bonus money, including in the postseason. On the 2025 ballot for the 2026 season. Not yet decided.",
+    detail: "Top scorer of the week earns bonus money, including postseason. On the 2026 ballot. Not yet decided.",
   },
 ];
 
