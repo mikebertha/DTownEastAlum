@@ -375,6 +375,43 @@ h1.section-title, h2.section-title {
 
 .archive-row:first-child { border-top: none; }
 
+/* Notes disclosure - collapsed by default under each article */
+.notes-toggle {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 0.5px dashed var(--navy-light);
+}
+
+.notes-toggle summary {
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--navy-mid);
+  list-style: none;
+}
+
+.notes-toggle summary::-webkit-details-marker { display: none; }
+
+.notes-toggle summary::before {
+  content: "▸ ";
+  color: var(--gold-dark);
+}
+
+.notes-toggle[open] summary::before {
+  content: "▾ ";
+}
+
+.notes-list { margin-top: 6px; }
+
+.notes-list p {
+  font-size: 11px;
+  color: var(--navy-mid);
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.notes-list p:last-child { margin-bottom: 0; }
+
 footer.app-footer {
   text-align: center;
   font-size: 11px;
