@@ -155,8 +155,8 @@ const CONSTITUTION_ARTICLES = [
   {
     title: "Scoring — offense",
     rows: [
-      { label: "Passing", value: "20 yds/pt · +3 at 300 yds, +4 at 400 yds, +5 at 500 yds · TD = 6 · INT = -2" },
-      { label: "Rushing / receiving", value: "10 yds/pt · +2 at 100 yds, +3 at 150 yds, +4 at 200 yds · TD = 6" },
+      { label: "Passing", value: "20 yds/pt · bonuses stack: +3 at 300, +4 more at 400, +5 more at 500 (max +12) · TD = 6 · INT = -2" },
+      { label: "Rushing / receiving", value: "10 yds/pt · bonuses stack: +2 at 100, +3 more at 150, +4 more at 200 (max +9) · TD = 6" },
       { label: "Receptions", value: "Full PPR — 1 pt/reception" },
       { label: "40+ yard TD bonus", value: "+2 (passing, rushing, receiving)" },
       { label: "Fumbles lost", value: "-2" },
