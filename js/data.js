@@ -199,7 +199,7 @@ const CONSTITUTION_ARTICLES = [
         title: "Buy-in, payouts & traditions",
         rows: [
           { label: "Buy-in", value: "$200 per owner" },
-          { label: "Payouts", value: "Doubled league-wide alongside the buy-in increase" },
+          { label: "Payouts", value: "Champion $1,100 · Runner-up $200 · Third $100 · Regular-season points champ $320 · Weekly high score $40/wk ×17 ($680)" },
           { label: "Last-place penalty", value: "\"The Combine\" — the last-place finisher completes the full NFL combine testing process" },
           { label: "Trophy custody", value: "Reigning champion holds the trophy through the following season. When a new champion is crowned, the outgoing champion delivers it to that season's last-place finisher, who has it engraved and delivers it to the new champion." },
               ],
