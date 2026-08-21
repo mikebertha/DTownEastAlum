@@ -16,12 +16,12 @@ const OWNERS = [
   { slug: "james-snyder", name: "James Snyder", seasons: 15, record: "96-106-1", winPct: 47.5, pf: 23880.1, pa: 23837.4, playoffs: 3, finals: 1, titles: 1, runnerUp: 0, third: 1, highScore: 191.20, team2025: "Drafted & Managed With AI" },
   { slug: "justin-claffey", name: "Justin Claffey", seasons: 18, record: "114-129-2", winPct: 46.9, pf: 27237.9, pa: 27738.5, playoffs: 7, finals: 5, titles: 4, runnerUp: 1, third: 0, highScore: 192.51, team2025: "Black Swans" },
   { slug: "dave-orr", name: "David Orr", seasons: 18, record: "106-137-2", winPct: 43.7, pf: 27402.0, pa: 28341.0, playoffs: 2, finals: 2, titles: 2, runnerUp: 1, third: 0, highScore: 207.15, team2025: "A Team Has No Name" },
-];
+  ];
 
 const BUDGETS_2026 = {
-  "jon-bradley": 200, "james-snyder": 230, "austen-musso": 183, "dave-orr": 226,
-  "tony-yacenda": 174, "brett-mariani": 188, "justin-claffey": 206, "chris-mcfarland": 223,
-  "greg-yayac": 200, "bobby-mainello": 200, "colin-maxwell": 200, "mike-bertha": 170,
+    "jon-bradley": 214, "james-snyder": 230, "austen-musso": 173, "dave-orr": 226,
+    "tony-yacenda": 174, "brett-mariani": 188, "justin-claffey": 206, "chris-mcfarland": 223,
+    "greg-yayac": 196, "bobby-mainello": 200, "colin-maxwell": 200, "mike-bertha": 170,
 };
 
 const DEFENDING_CHAMPION = "mike-bertha";
@@ -34,41 +34,55 @@ const DEFENDING_CHAMPION = "mike-bertha";
 // summary string.
 const RECENT_TRADES = [
   {
-    date: "2025-11-23",
-    moves: [
-      { player: "Jauan Jennings", to: "JBLA" },
-      { player: "Jordan Mason", to: "Return of the Mac" },
-    ],
+        date: "2026-08-20",
+        moves: [
+          { player: "Kenneth Walker III", to: "Nowhere to go but up" },
+          { player: "$10 budget", to: "Broboken No Jokin" },
+              ],
   },
   {
-    date: "2025-11-22",
-    moves: [
-      { player: "Alvin Kamara", to: "JBLA" },
-      { player: "Quentin Johnston", to: "Broboken No Jokin" },
-    ],
+        date: "2026-08-20",
+        moves: [
+          { player: "Malik Nabers", to: "Thug Lifo" },
+          { player: "$4 budget", to: "Broboken No Jokin" },
+              ],
   },
   {
-    date: "2025-10-23",
-    moves: [
-      { player: "Marvin Mims Jr.", to: "A Team Has No Name" },
-      { player: "Dylan Sampson", to: "A Team Has No Name" },
-      { player: "Woody Marks", to: "A Team Has No Name" },
-      { player: "Brian Robinson", to: "Playoff Dark Horse" },
-      { player: "Keenan Allen", to: "Playoff Dark Horse" },
-      { player: "Christian McCaffrey", to: "Playoff Dark Horse" },
-    ],
+        date: "2025-11-23",
+        moves: [
+          { player: "Jauan Jennings", to: "JBLA" },
+          { player: "Jordan Mason", to: "Return of the Mac" },
+              ],
   },
   {
-    date: "2025-10-09",
-    moves: [
-      { player: "Bijan Robinson", to: "JBLA" },
-      { player: "Ollie Gordon II", to: "JBLA" },
-      { player: "Jayden Daniels", to: "JBLA" },
-      { player: "Josh Downs", to: "Drafted & Managed With AI" },
-      { player: "Cam Skattebo", to: "Drafted & Managed With AI" },
-    ],
+        date: "2025-11-22",
+        moves: [
+          { player: "Alvin Kamara", to: "JBLA" },
+          { player: "Quentin Johnston", to: "Broboken No Jokin" },
+              ],
   },
-];
+  {
+        date: "2025-10-23",
+        moves: [
+          { player: "Marvin Mims Jr.", to: "A Team Has No Name" },
+          { player: "Dylan Sampson", to: "A Team Has No Name" },
+          { player: "Woody Marks", to: "A Team Has No Name" },
+          { player: "Brian Robinson", to: "Playoff Dark Horse" },
+          { player: "Keenan Allen", to: "Playoff Dark Horse" },
+          { player: "Christian McCaffrey", to: "Playoff Dark Horse" },
+              ],
+  },
+  {
+        date: "2025-10-09",
+        moves: [
+          { player: "Bijan Robinson", to: "JBLA" },
+          { player: "Ollie Gordon II", to: "JBLA" },
+          { player: "Jayden Daniels", to: "JBLA" },
+          { player: "Josh Downs", to: "Drafted & Managed With AI" },
+          { player: "Cam Skattebo", to: "Drafted & Managed With AI" },
+              ],
+  },
+  ];
 
 // The DTown East Alum Constitution. Built from three sources: Yahoo's live
 // 2026 Scoring & Settings page, the full "Fantasy Rules for Vote" record
@@ -87,130 +101,130 @@ const RECENT_TRADES = [
 // full year-by-year paper trail these articles are distilled from.
 const CONSTITUTION_ARTICLES = [
   {
-    title: "Format",
-    rows: [
-      { label: "League type", value: "Head-to-head, live salary-cap (auction) draft" },
-      { label: "Teams", value: "12" },
-      { label: "Keeper league", value: "Yes" },
-      { label: "Draft", value: "Mon, Sep 7, 2026 · live auction" },
-      { label: "Keeper deadline", value: "Sun, Sep 6, 2026" },
-    ],
+        title: "Format",
+        rows: [
+          { label: "League type", value: "Head-to-head, live salary-cap (auction) draft" },
+          { label: "Teams", value: "12" },
+          { label: "Keeper league", value: "Yes" },
+          { label: "Draft", value: "Mon, Sep 7, 2026 · live auction" },
+          { label: "Keeper deadline", value: "Sun, Sep 6, 2026" },
+              ],
   },
   {
-    title: "Roster & lineup",
-    rows: [
-      { label: "Starting lineup", value: "QB, WR, WR, RB, RB, TE, W/R/T, K, DEF" },
-      { label: "Bench", value: "7" },
-      { label: "IR", value: "2" },
-    ],
+        title: "Roster & lineup",
+        rows: [
+          { label: "Starting lineup", value: "QB, WR, WR, RB, RB, TE, W/R/T, K, DEF" },
+          { label: "Bench", value: "7" },
+          { label: "IR", value: "2" },
+              ],
   },
   {
-    title: "Draft & budget",
-    rows: [
-      { label: "Base cap", value: "$200 flat per owner, every year" },
-      { label: "Per-owner floor / ceiling", value: "$170 min · $230 max" },
-      { label: "Trade-adjusted cap", value: "† $200 ± net budget dollars traded between drafts, capped at $30 cumulative per season" },
-      { label: "Live draft budget", value: "Trade-adjusted cap minus total keeper cost" },
-    ],
-    notes: [
-      "Per-owner $170/$230 bounds ratified 2019, for the 2020 season.",
-      "† Trade cap: the 2019 vote set it at $50. Mike recalls it was later reduced to $30 — that's the working number, but the exact vote isn't in the paper record.",
-    ],
+        title: "Draft & budget",
+        rows: [
+          { label: "Base cap", value: "$200 flat per owner, every year" },
+          { label: "Per-owner floor / ceiling", value: "$170 min · $230 max" },
+          { label: "Trade-adjusted cap", value: "† $200 ± net budget dollars traded between drafts, capped at $30 cumulative per season" },
+          { label: "Live draft budget", value: "Trade-adjusted cap minus total keeper cost" },
+              ],
+        notes: [
+                "Per-owner $170/$230 bounds ratified 2019, for the 2020 season.",
+                "† Trade cap: the 2019 vote set it at $50. Mike recalls it was later reduced to $30 — that's the working number, but the exact vote isn't in the paper record.",
+              ],
   },
   {
-    title: "Keepers",
-    rows: [
-      { label: "Keeper eligibility", value: "Tied to the player, not the draft year — kept indefinitely" },
-      { label: "Keeper fee", value: "Prior salary + (6 + total keepers designated that year), applied to every keeper" },
-      { label: "Waiver/FA-acquired player salary", value: "Flat $25 for any player without a salary from a prior draft" },
-    ],
-    notes: [
-      "Keeper-for-life rule ratified 2018.",
-      "Escalating fee ratified 2023, for the 2024 season ('Option 1', beating a flatter 'Option 2'). Before that, a kept player's price just stayed at its original salary forever.",
-      "A 2023 proposal to base waiver-pickup salary on FAAB spend instead was rejected — the $25 flat rule stands.",
-    ],
+        title: "Keepers",
+        rows: [
+          { label: "Keeper eligibility", value: "Tied to the player, not the draft year — kept indefinitely" },
+          { label: "Keeper fee", value: "Prior salary + (6 + total keepers designated that year), applied to every keeper" },
+          { label: "Waiver/FA-acquired player salary", value: "Flat $25 for any player without a salary from a prior draft" },
+              ],
+        notes: [
+                "Keeper-for-life rule ratified 2018.",
+                "Escalating fee ratified 2023, for the 2024 season ('Option 1', beating a flatter 'Option 2'). Before that, a kept player's price just stayed at its original salary forever.",
+                "A 2023 proposal to base waiver-pickup salary on FAAB spend instead was rejected — the $25 flat rule stands.",
+              ],
   },
   {
-    title: "Trades",
-    rows: [
-      { label: "Review", value: "Commissioner review, 1-day reject window" },
-      { label: "Weekly completion", value: "Must clear by Wednesday, ahead of Thursday Night Football" },
-      { label: "Season deadline", value: "Nov 28, 2026" },
-      { label: "Draft-pick trades", value: "Not allowed" },
-      { label: "Protected-player floor", value: "Any player on Yahoo's \"can't cut\" list can't be traded/sold for under $15; commissioner has automatic veto power over trades that undervalue them" },
-    ],
-    notes: [
-      "Wednesday deadline moved from Saturday, ratified 2022.",
-      "$15 protected-player floor ratified 2019.",
-    ],
+        title: "Trades",
+        rows: [
+          { label: "Review", value: "Commissioner review, 1-day reject window" },
+          { label: "Weekly completion", value: "Must clear by Wednesday, ahead of Thursday Night Football" },
+          { label: "Season deadline", value: "Nov 28, 2026" },
+          { label: "Draft-pick trades", value: "Not allowed" },
+          { label: "Protected-player floor", value: "Any player on Yahoo's \"can't cut\" list can't be traded/sold for under $15; commissioner has automatic veto power over trades that undervalue them" },
+              ],
+        notes: [
+                "Wednesday deadline moved from Saturday, ratified 2022.",
+                "$15 protected-player floor ratified 2019.",
+              ],
   },
   {
-    title: "Waivers",
-    rows: [
-      { label: "Format", value: "FAB (blind bid), reverse-standings tiebreak" },
-      { label: "Processing", value: "Weekly, Tuesdays" },
-      { label: "Max acquisitions/week", value: "4 (no season max)" },
-    ],
+        title: "Waivers",
+        rows: [
+          { label: "Format", value: "FAB (blind bid), reverse-standings tiebreak" },
+          { label: "Processing", value: "Weekly, Tuesdays" },
+          { label: "Max acquisitions/week", value: "4 (no season max)" },
+              ],
   },
   {
-    title: "Scoring — offense",
-    rows: [
-      { label: "Passing", value: "20 yds/pt · bonuses stack: +3 at 300, +4 more at 400, +5 more at 500 (max +12) · TD = 6 · INT = -2" },
-      { label: "Rushing / receiving", value: "10 yds/pt · bonuses stack: +2 at 100, +3 more at 150, +4 more at 200 (max +9) · TD = 6" },
-      { label: "Receptions", value: "Full PPR — 1 pt/reception" },
-      { label: "40+ yard TD bonus", value: "+2 (passing, rushing, receiving)" },
-      { label: "Fumbles lost", value: "-2" },
-      { label: "2-point conversion", value: "2" },
-    ],
-    notes: ["INT moved from -1 to -2 in 2022, to match the defensive reward."],
+        title: "Scoring — offense",
+        rows: [
+          { label: "Passing", value: "20 yds/pt · bonuses stack: +3 at 300, +4 more at 400, +5 more at 500 (max +12) · TD = 6 · INT = -2" },
+          { label: "Rushing / receiving", value: "10 yds/pt · bonuses stack: +2 at 100, +3 more at 150, +4 more at 200 (max +9) · TD = 6" },
+          { label: "Receptions", value: "Full PPR — 1 pt/reception" },
+          { label: "40+ yard TD bonus", value: "+2 (passing, rushing, receiving)" },
+          { label: "Fumbles lost", value: "-2" },
+          { label: "2-point conversion", value: "2" },
+              ],
+        notes: ["INT moved from -1 to -2 in 2022, to match the defensive reward."],
   },
   {
-    title: "Scoring — kickers & defense",
-    rows: [
-      { label: "Kicker", value: "PAT = 1 · field goals scored by total yards, 10 yds/pt" },
-      { label: "Defense/ST", value: "Sack = 1 · INT = 2 · Fumble rec. = 2 · TD = 6 · Safety = 6 · Block kick = 2" },
-      { label: "Points allowed", value: "0=10, 1-6=7, 7-13=4, 14-20=1, 21-27=0, 28+=0 (never negative)" },
-    ],
-    notes: ["Decimal kicker scoring ratified 2020 (previously whole points only)."],
+        title: "Scoring — kickers & defense",
+        rows: [
+          { label: "Kicker", value: "PAT = 1 · field goals scored by total yards, 10 yds/pt" },
+          { label: "Defense/ST", value: "Sack = 1 · INT = 2 · Fumble rec. = 2 · TD = 6 · Safety = 6 · Block kick = 2" },
+          { label: "Points allowed", value: "0=10, 1-6=7, 7-13=4, 14-20=1, 21-27=0, 28+=0 (never negative)" },
+              ],
+        notes: ["Decimal kicker scoring ratified 2020 (previously whole points only)."],
   },
   {
-    title: "Playoffs",
-    rows: [
-      { label: "Format", value: "Top 6 teams · weeks 15, 16, 17" },
-      { label: "Tiebreaker", value: "Best regular-season record vs. opponent wins" },
-    ],
-    notes: ["Moved from a 4-team to 6-team field in 2019."],
+        title: "Playoffs",
+        rows: [
+          { label: "Format", value: "Top 6 teams · weeks 15, 16, 17" },
+          { label: "Tiebreaker", value: "Best regular-season record vs. opponent wins" },
+              ],
+        notes: ["Moved from a 4-team to 6-team field in 2019."],
   },
   {
-    title: "Buy-in, payouts & traditions",
-    rows: [
-      { label: "Buy-in", value: "$200 per owner" },
-      { label: "Payouts", value: "Doubled league-wide alongside the buy-in increase" },
-      { label: "Last-place penalty", value: "\"The Combine\" — the last-place finisher completes the full NFL combine testing process" },
-      { label: "Trophy custody", value: "Reigning champion holds the trophy through the following season. When a new champion is crowned, the outgoing champion delivers it to that season's last-place finisher, who has it engraved and delivers it to the new champion." },
-    ],
-    notes: [
-      "$200 buy-in / doubled payouts ratified 2024, first effective this season.",
-      "Last-place penalty ('The Combine') ratified 2024 — Mike doesn't expect strict follow-through in practice.",
-      "Trophy custody ratified in principle 2024; the exact hand-off order was worked out informally afterward, not itself voted on (see On the docket below).",
-    ],
+        title: "Buy-in, payouts & traditions",
+        rows: [
+          { label: "Buy-in", value: "$200 per owner" },
+          { label: "Payouts", value: "Doubled league-wide alongside the buy-in increase" },
+          { label: "Last-place penalty", value: "\"The Combine\" — the last-place finisher completes the full NFL combine testing process" },
+          { label: "Trophy custody", value: "Reigning champion holds the trophy through the following season. When a new champion is crowned, the outgoing champion delivers it to that season's last-place finisher, who has it engraved and delivers it to the new champion." },
+              ],
+        notes: [
+                "$200 buy-in / doubled payouts ratified 2024, first effective this season.",
+                "Last-place penalty ('The Combine') ratified 2024 — Mike doesn't expect strict follow-through in practice.",
+                "Trophy custody ratified in principle 2024; the exact hand-off order was worked out informally afterward, not itself voted on (see On the docket below).",
+              ],
   },
   {
-    title: "Governance & amendments",
-    rows: [
-      { label: "Proposal cycle", value: "Annual, ahead of each season's draft" },
-      { label: "Three-strikes rule", value: "A proposal rejected 3 times cannot be brought back for a vote" },
-      { label: "Ratification threshold", value: "† Believed to require a firm majority (at least 7 of 12)" },
-      { label: "Tied votes", value: "Treated as a rejection" },
-    ],
-    notes: [
-      "Three-strikes rule ratified 2022.",
-      "† Threshold isn't stated in the source document — pending Mike's confirmation of the real number.",
-      "† The source document labels the 2024 kicker-removal rejection \"SECOND STRIKE.\" If strikes started counting at the 2022 rule itself, 2024 would be strike three and bar this year's kicker proposal outright. Mike believes only two attempts have occurred since the rule took effect, making this year's the deciding third — worth settling before the vote goes out.",
-      "Tied-vote-as-rejection precedent set 2017.",
-    ],
+        title: "Governance & amendments",
+        rows: [
+          { label: "Proposal cycle", value: "Annual, ahead of each season's draft" },
+          { label: "Three-strikes rule", value: "A proposal rejected 3 times cannot be brought back for a vote" },
+          { label: "Ratification threshold", value: "† Believed to require a firm majority (at least 7 of 12)" },
+          { label: "Tied votes", value: "Treated as a rejection" },
+              ],
+        notes: [
+                "Three-strikes rule ratified 2022.",
+                "† Threshold isn't stated in the source document — pending Mike's confirmation of the real number.",
+                "† The source document labels the 2024 kicker-removal rejection \"SECOND STRIKE.\" If strikes started counting at the 2022 rule itself, 2024 would be strike three and bar this year's kicker proposal outright. Mike believes only two attempts have occurred since the rule took effect, making this year's the deciding third — worth settling before the vote goes out.",
+                "Tied-vote-as-rejection precedent set 2017.",
+              ],
   },
-];
+  ];
 
 // Rules the league is actively deciding or needs to formally resolve this
 // cycle - distinct from the ratified articles above. This is the section
@@ -218,30 +232,30 @@ const CONSTITUTION_ARTICLES = [
 // terse by design — one line of what it is, one line of what's needed.
 const DOCKET_2026 = [
   {
-    title: "League Rivals — implement or repeal",
-    detail: "Ratified 2022, never implemented in the schedule. Needs real rivalry pairings this year, or a vote to repeal it.",
+        title: "League Rivals — implement or repeal",
+        detail: "Ratified 2022, never implemented in the schedule. Needs real rivalry pairings this year, or a vote to repeal it.",
   },
   {
-    title: "Trophy custody — formal language",
-    detail: "Chain of custody (see Buy-in, payouts & traditions) has run on informal agreement since 2024. Needs codified language and a vote this cycle.",
+        title: "Trophy custody — formal language",
+        detail: "Chain of custody (see Buy-in, payouts & traditions) has run on informal agreement since 2024. Needs codified language and a vote this cycle.",
   },
   {
-    title: "Remove all computers for the draft — pen and paper only",
-    detail: "On the 2026 ballot. Not yet decided.",
+        title: "Remove all computers for the draft — pen and paper only",
+        detail: "On the 2026 ballot. Not yet decided.",
   },
   {
-    title: "Remove kicker, or require starting 2 QBs",
-    detail: "On the 2026 ballot. May already be barred by the three-strikes rule — see Governance notes.",
+        title: "Remove kicker, or require starting 2 QBs",
+        detail: "On the 2026 ballot. May already be barred by the three-strikes rule — see Governance notes.",
   },
   {
-    title: "Most Points For gets the 6th playoff spot",
-    detail: "If not already in the top 6. On the 2026 ballot. Not yet decided.",
+        title: "Most Points For gets the 6th playoff spot",
+        detail: "If not already in the top 6. On the 2026 ballot. Not yet decided.",
   },
   {
-    title: "Weekly high-scorer bonus",
-    detail: "Top scorer of the week earns bonus money, including postseason. On the 2026 ballot. Not yet decided. If adopted, the full payout structure needs to be adjusted to account for it.",
+        title: "Weekly high-scorer bonus",
+        detail: "Top scorer of the week earns bonus money, including postseason. On the 2026 ballot. Not yet decided. If adopted, the full payout structure needs to be adjusted to account for it.",
   },
-];
+  ];
 
 // Full paper trail, 2017-2025, transcribed from the league's own
 // color-coded "Fantasy Rules for Vote" record (green = PASSED, red =
@@ -252,112 +266,112 @@ const DOCKET_2026 = [
 // full so nothing gets lost to a future summary.
 const PROPOSAL_HISTORY = [
   {
-    seasonVoted: 2017,
-    effectiveSeason: 2018,
-    proposals: [
-      { text: "PPR scoring (could be 0.5, 0.25, etc. points per reception)", status: "passed" },
-      { text: "Flex roster spot", status: "passed" },
-      { text: "Get rid of kickers", status: "rejected" },
-      { text: "Auction waivers", status: "passed" },
-      { text: "24-hour trade veto window, in lieu of the existing 48 hours (enables Wednesday trades)", status: "passed" },
-      { text: "For tied votes, the defending champion's vote is the tiebreaker", status: "tied_rejected" },
-      { text: "Playoff teams get first dibs on waivers", status: "rejected" },
-      { text: "Fractional yardage points", status: "passed" },
-    ],
+        seasonVoted: 2017,
+        effectiveSeason: 2018,
+        proposals: [
+          { text: "PPR scoring (could be 0.5, 0.25, etc. points per reception)", status: "passed" },
+          { text: "Flex roster spot", status: "passed" },
+          { text: "Get rid of kickers", status: "rejected" },
+          { text: "Auction waivers", status: "passed" },
+          { text: "24-hour trade veto window, in lieu of the existing 48 hours (enables Wednesday trades)", status: "passed" },
+          { text: "For tied votes, the defending champion's vote is the tiebreaker", status: "tied_rejected" },
+          { text: "Playoff teams get first dibs on waivers", status: "rejected" },
+          { text: "Fractional yardage points", status: "passed" },
+              ],
   },
   {
-    seasonVoted: 2018,
-    effectiveSeason: 2019,
-    proposals: [
-      { text: "Three-strike-and-out policy if an owner doesn't set lineups", status: "passed" },
-      { text: "Reduce bonus points to 2 pts per bonus level for each position, in lieu of the current model", status: "tied_rejected" },
-      { text: "Keeper tied to the player, not the draft year (e.g. draft Carson Wentz in 2018 → keep him through 2021; draft Julio Jones in 2019 → keep him through 2022); keeper lasts forever", status: "passed" },
-      { text: "Maximum $50 of next season's auction money can be used in trades during the season and offseason", status: "passed" },
-      { text: "A team that is drafted is your team for a full year; offseason trades can take place", status: "passed" },
-    ],
+        seasonVoted: 2018,
+        effectiveSeason: 2019,
+        proposals: [
+          { text: "Three-strike-and-out policy if an owner doesn't set lineups", status: "passed" },
+          { text: "Reduce bonus points to 2 pts per bonus level for each position, in lieu of the current model", status: "tied_rejected" },
+          { text: "Keeper tied to the player, not the draft year (e.g. draft Carson Wentz in 2018 → keep him through 2021; draft Julio Jones in 2019 → keep him through 2022); keeper lasts forever", status: "passed" },
+          { text: "Maximum $50 of next season's auction money can be used in trades during the season and offseason", status: "passed" },
+          { text: "A team that is drafted is your team for a full year; offseason trades can take place", status: "passed" },
+              ],
   },
   {
-    seasonVoted: 2019,
-    effectiveSeason: 2020,
-    proposals: [
-      { text: "Draft clock reduced to 10 seconds", status: "passed" },
-      { text: "Weekly loser pays $X to the pot, like the weekly winner takes from the pot", status: "rejected" },
-      { text: "No trading cap money after week 5; trading players continues until the week 10 normal deadline", status: "rejected" },
-      { text: "Change playoffs from a 4-team to a 6-team field", status: "passed" },
-      { text: "Migrate league host site to Ottoneu (FanGraphs) — full salary-cap re-platform with a real-life-style roster and NFL/college universe", status: "rejected" },
-      { text: "Handle league matters via email, in lieu of Facebook Messenger", status: "passed" },
-      { text: "$1/minute cap deduction next season for every minute an owner is late to the draft room", status: "rejected" },
-      { text: "2 keepers allowed, in accordance with current keeper rules", status: "passed" },
-      { text: "Any player on Yahoo's \"can't cut\" list can't be traded/sold for less than $15; commissioner gets automatic veto power over player+cash trades that undervalue them", status: "passed" },
-      { text: "Minimum draft budget changed to $170, maximum to $230 (from $150 min / $250 max)", status: "passed" },
-    ],
+        seasonVoted: 2019,
+        effectiveSeason: 2020,
+        proposals: [
+          { text: "Draft clock reduced to 10 seconds", status: "passed" },
+          { text: "Weekly loser pays $X to the pot, like the weekly winner takes from the pot", status: "rejected" },
+          { text: "No trading cap money after week 5; trading players continues until the week 10 normal deadline", status: "rejected" },
+          { text: "Change playoffs from a 4-team to a 6-team field", status: "passed" },
+          { text: "Migrate league host site to Ottoneu (FanGraphs) — full salary-cap re-platform with a real-life-style roster and NFL/college universe", status: "rejected" },
+          { text: "Handle league matters via email, in lieu of Facebook Messenger", status: "passed" },
+          { text: "$1/minute cap deduction next season for every minute an owner is late to the draft room", status: "rejected" },
+          { text: "2 keepers allowed, in accordance with current keeper rules", status: "passed" },
+          { text: "Any player on Yahoo's \"can't cut\" list can't be traded/sold for less than $15; commissioner gets automatic veto power over player+cash trades that undervalue them", status: "passed" },
+          { text: "Minimum draft budget changed to $170, maximum to $230 (from $150 min / $250 max)", status: "passed" },
+              ],
   },
   {
-    seasonVoted: 2020,
-    effectiveSeason: 2021,
-    proposals: [
-      { text: "Allow pickups/drops of a player until their game kicks off", status: "passed" },
-      { text: "Waiver auction price + $10 = keeper value (currently a flat $25 for any FA/waiver addition)", status: "rejected" },
-      { text: "Kickers get decimal points (e.g. a 35-yard FG scores 3.5 instead of a flat 3)", status: "passed" },
-      { text: "Eliminate week 17 games, add that cash to first-place winnings", status: "rejected" },
-      { text: "Remove kicker from the active roster for the 2021 season", status: "rejected" },
-      { text: "Punishment for the last-place finisher (contingent follow-up vote on specifics)", status: "rejected" },
-    ],
+        seasonVoted: 2020,
+        effectiveSeason: 2021,
+        proposals: [
+          { text: "Allow pickups/drops of a player until their game kicks off", status: "passed" },
+          { text: "Waiver auction price + $10 = keeper value (currently a flat $25 for any FA/waiver addition)", status: "rejected" },
+          { text: "Kickers get decimal points (e.g. a 35-yard FG scores 3.5 instead of a flat 3)", status: "passed" },
+          { text: "Eliminate week 17 games, add that cash to first-place winnings", status: "rejected" },
+          { text: "Remove kicker from the active roster for the 2021 season", status: "rejected" },
+          { text: "Punishment for the last-place finisher (contingent follow-up vote on specifics)", status: "rejected" },
+              ],
   },
   {
-    seasonVoted: 2021,
-    effectiveSeason: 2022,
-    proposals: [
-      { text: "Last-place penalty system — 5 options: \"The Hue Jackman\" (dress in a suit, jump in a body of water), \"The Combine\" (full NFL combine testing), \"Fireman\" (2 hours holding a sign on a street corner), \"Wafflehouse\" (20 hours at a diner, no wifi/computer), \"The Wax\" (chest/back/leg waxing)", status: "rejected" },
-      { text: "Move trade deadline from Saturday to Wednesday, ahead of Thursday Night Football", status: "passed" },
-      { text: "Remove kickers, add a flex spot to fill the kicker position", status: "rejected" },
-      { text: "Three-strikes rule: a rule change rejected 3 times can't be voted on again", status: "passed" },
-    ],
+        seasonVoted: 2021,
+        effectiveSeason: 2022,
+        proposals: [
+          { text: "Last-place penalty system — 5 options: \"The Hue Jackman\" (dress in a suit, jump in a body of water), \"The Combine\" (full NFL combine testing), \"Fireman\" (2 hours holding a sign on a street corner), \"Wafflehouse\" (20 hours at a diner, no wifi/computer), \"The Wax\" (chest/back/leg waxing)", status: "rejected" },
+          { text: "Move trade deadline from Saturday to Wednesday, ahead of Thursday Night Football", status: "passed" },
+          { text: "Remove kickers, add a flex spot to fill the kicker position", status: "rejected" },
+          { text: "Three-strikes rule: a rule change rejected 3 times can't be voted on again", status: "passed" },
+              ],
   },
   {
-    seasonVoted: 2022,
-    effectiveSeason: 2023,
-    proposals: [
-      { text: "Interceptions -2 for QB/offensive player (was -1), to match the +2 defensive reward", status: "passed" },
-      { text: "Go back to a snake draft", status: "rejected" },
-      { text: "No limit on transactions per week", status: "rejected" },
-      { text: "League Rivals — schedule opens against a designated rival in week 1, rematch in week 12 (\"rivalry week\"); rivals set by the commissioner based on prior-season events", status: "passed" },
-    ],
+        seasonVoted: 2022,
+        effectiveSeason: 2023,
+        proposals: [
+          { text: "Interceptions -2 for QB/offensive player (was -1), to match the +2 defensive reward", status: "passed" },
+          { text: "Go back to a snake draft", status: "rejected" },
+          { text: "No limit on transactions per week", status: "rejected" },
+          { text: "League Rivals — schedule opens against a designated rival in week 1, rematch in week 12 (\"rivalry week\"); rivals set by the commissioner based on prior-season events", status: "passed" },
+              ],
   },
   {
-    seasonVoted: 2023,
-    effectiveSeason: 2024,
-    proposals: [
-      { text: "Optional one-round snake draft of a college player ($5 of auction budget; costs $15 against auction budget if the player reaches the NFL and is kept; doesn't count against the active roster)", status: "rejected" },
-      { text: "Escalating keeper fee — \"Option 1\": salary + $7 (1 keeper), +$16/$8-each (2), +$27/$9-each (3), +$40/$10-each (4), +$55/$11-each (5), +$72/$12-each (6), etc.", status: "passed" },
-      { text: "Escalating keeper fee — \"Option 2\" (flatter increments: salary, +$5, +$10, +$15, +$20, +$25)", status: "rejected" },
-      { text: "FAAB spend counts as salary for undrafted/waiver-added players, with original draft salary taking precedence if a player is re-added later", status: "rejected" },
-      { text: "Remove kicker, replace with a flex spot (SECOND STRIKE)", status: "rejected" },
-      { text: "Move draft time/day (4 sub-options, including moving off Labor Day)", status: "rejected" },
-    ],
+        seasonVoted: 2023,
+        effectiveSeason: 2024,
+        proposals: [
+          { text: "Optional one-round snake draft of a college player ($5 of auction budget; costs $15 against auction budget if the player reaches the NFL and is kept; doesn't count against the active roster)", status: "rejected" },
+          { text: "Escalating keeper fee — \"Option 1\": salary + $7 (1 keeper), +$16/$8-each (2), +$27/$9-each (3), +$40/$10-each (4), +$55/$11-each (5), +$72/$12-each (6), etc.", status: "passed" },
+          { text: "Escalating keeper fee — \"Option 2\" (flatter increments: salary, +$5, +$10, +$15, +$20, +$25)", status: "rejected" },
+          { text: "FAAB spend counts as salary for undrafted/waiver-added players, with original draft salary taking precedence if a player is re-added later", status: "rejected" },
+          { text: "Remove kicker, replace with a flex spot (SECOND STRIKE)", status: "rejected" },
+          { text: "Move draft time/day (4 sub-options, including moving off Labor Day)", status: "rejected" },
+              ],
   },
   {
-    seasonVoted: 2024,
-    effectiveSeason: 2025,
-    proposals: [
-      { text: "Last-place penalty is \"The Combine\"", status: "passed" },
-      { text: "Penalty for nominating a kicker with more than 2 open roster spots (lose $25 in waiver money)", status: "rejected" },
-      { text: "Buy-in increased to $200, all payouts doubled", status: "passed" },
-      { text: "Last place is responsible for coordinating and completing the trophy engraving and exchange", status: "passed" },
-      { text: "Remove kicker", status: "rejected" },
-    ],
+        seasonVoted: 2024,
+        effectiveSeason: 2025,
+        proposals: [
+          { text: "Last-place penalty is \"The Combine\"", status: "passed" },
+          { text: "Penalty for nominating a kicker with more than 2 open roster spots (lose $25 in waiver money)", status: "rejected" },
+          { text: "Buy-in increased to $200, all payouts doubled", status: "passed" },
+          { text: "Last place is responsible for coordinating and completing the trophy engraving and exchange", status: "passed" },
+          { text: "Remove kicker", status: "rejected" },
+              ],
   },
   {
-    seasonVoted: 2025,
-    effectiveSeason: 2026,
-    proposals: [
-      { text: "Remove all computers for the draft — pen and paper only", status: "pending" },
-      { text: "Remove kicker, or require starting 2 QBs", status: "pending" },
-      { text: "Most Points For in the league gets the 6th playoff spot if not already in the top 6", status: "pending" },
-      { text: "Top scorer of the week gets bonus dollars, including postseason", status: "pending" },
-    ],
+        seasonVoted: 2025,
+        effectiveSeason: 2026,
+        proposals: [
+          { text: "Remove all computers for the draft — pen and paper only", status: "pending" },
+          { text: "Remove kicker, or require starting 2 QBs", status: "pending" },
+          { text: "Most Points For in the league gets the 6th playoff spot if not already in the top 6", status: "pending" },
+          { text: "Top scorer of the week gets bonus dollars, including postseason", status: "pending" },
+              ],
   },
-];
+  ];
 
 const FREE_AGENTS = [
   { name: "Tez Johnson", pos: "WR", team: "TB", snap: 71, usage: "4.2 tgt/gm", airYards: 312, priorSalary: 25 },
@@ -368,22 +382,22 @@ const FREE_AGENTS = [
   { name: "Jerry Jeudy", pos: "WR", team: "Cle", snap: 59, usage: "3.4 tgt/gm", airYards: 264, priorSalary: 3 },
   { name: "Rico Dowdle", pos: "RB", team: "Car", snap: 41, usage: "7.8 tch/gm", airYards: 0, priorSalary: 25 },
   { name: "Wil Lutz", pos: "K", team: "Den", snap: 0, usage: "1.6 FG/gm", airYards: 0, priorSalary: 25 },
-];
+  ];
 
 // Real NFL-style weekly time slots, fixed by game-of-the-week rather than
 // randomized. Week 1 always opens with the Thursday night kickoff game.
 const TIME_SLOTS = [
-  "Thu 8:15pm",
-  "Sun 1:00pm",
-  "Sun 1:00pm",
-  "Sun 4:05pm",
-  "Sun 8:20pm",
-  "Mon 8:15pm",
-];
+    "Thu 8:15pm",
+    "Sun 1:00pm",
+    "Sun 1:00pm",
+    "Sun 4:05pm",
+    "Sun 8:20pm",
+    "Mon 8:15pm",
+  ];
 
 const SEASON_STATUS = {
-  year: 2026,
-  phase: "preseason",
-  draftDate: "2026-09-07",
-  keeperDeadline: "2026-09-06",
+    year: 2026,
+    phase: "preseason",
+    draftDate: "2026-09-07",
+    keeperDeadline: "2026-09-06",
 };
