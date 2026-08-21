@@ -269,6 +269,10 @@ const DOCKET_2026 = [
         title: "Lock next season's draft budget from trades until Week 7",
         detail: "Would bar trading next season's budget money until the start of league Week 7. On the 2026 ballot. Not yet decided.",
   },
+  {
+        title: "Flat-point field goal scoring",
+        detail: "Proposed given the influx of long kicks from the new footballs: FG up to 60 yards = 3 pts, 60+ yards = 4 pts, missed FG = -1 — replacing the current 10 yds/pt scoring. On the 2026 ballot. Not yet decided.",
+  },
   ];
 
 // Full paper trail, 2017-2025, transcribed from the league's own
@@ -385,6 +389,7 @@ const PROPOSAL_HISTORY = [
           { text: "Top scorer of the week gets bonus dollars, including postseason", status: "pending" },
           { text: "Cap the maximum number of keepers at 5", status: "pending" },
           { text: "Forbid trading next season's draft budget until the start of league Week 7", status: "pending" },
+          { text: "Flat-point field goal scoring: FG up to 60 yds = 3, 60+ yds = 4, missed FG = -1 (replacing 10 yds/pt)", status: "pending" },
               ],
   },
   ];
