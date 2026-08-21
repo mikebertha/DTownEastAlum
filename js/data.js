@@ -255,6 +255,14 @@ const DOCKET_2026 = [
         title: "Weekly high-scorer bonus",
         detail: "Top scorer of the week earns bonus money, including postseason. On the 2026 ballot. Not yet decided. If adopted, the full payout structure needs to be adjusted to account for it.",
   },
+  {
+        title: "Cap keepers at 5",
+        detail: "On the 2026 ballot. Not yet decided.",
+  },
+  {
+        title: "Lock next season's draft budget from trades until Week 7",
+        detail: "Would bar trading next season's budget money until the start of league Week 7. On the 2026 ballot. Not yet decided.",
+  },
   ];
 
 // Full paper trail, 2017-2025, transcribed from the league's own
@@ -369,6 +377,8 @@ const PROPOSAL_HISTORY = [
           { text: "Remove kicker, or require starting 2 QBs", status: "pending" },
           { text: "Most Points For in the league gets the 6th playoff spot if not already in the top 6", status: "pending" },
           { text: "Top scorer of the week gets bonus dollars, including postseason", status: "pending" },
+          { text: "Cap the maximum number of keepers at 5", status: "pending" },
+          { text: "Forbid trading next season's draft budget until the start of league Week 7", status: "pending" },
               ],
   },
   ];
