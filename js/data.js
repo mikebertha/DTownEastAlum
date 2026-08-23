@@ -20,7 +20,7 @@ const OWNERS = [
 
 const BUDGETS_2026 = {
     "jon-bradley": 214, "james-snyder": 230, "austen-musso": 173, "dave-orr": 226,
-    "tony-yacenda": 174, "brett-mariani": 188, "justin-claffey": 206, "chris-mcfarland": 223,
+    "tony-yacenda": 174, "brett-mariani": 190, "justin-claffey": 206, "chris-mcfarland": 223,
     "greg-yayac": 196, "bobby-mainello": 200, "colin-maxwell": 200, "mike-bertha": 170,
 };
 
@@ -33,6 +33,13 @@ const DEFENDING_CHAMPION = "mike-bertha";
 // backwards - see the note on that function for why this replaced a plain
 // summary string.
 const RECENT_TRADES = [
+  {
+        date: "2026-08-23",
+        moves: [
+          { player: "Zay Flowers", to: "JBLA" },
+          { player: "$2 budget", to: "Eskimo Brothers" },
+              ],
+  },
   {
         date: "2026-08-20",
         moves: [
