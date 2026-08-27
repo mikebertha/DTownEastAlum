@@ -245,12 +245,12 @@ const CONSTITUTION_ARTICLES = [
 // terse by design — one line of what it is, one line of what's needed.
 const DOCKET_2026 = [
   {
-        title: "League Rivals — implement or repeal",
-        detail: "Ratified 2022, never implemented in the schedule. Needs real rivalry pairings this year, or a vote to repeal it.",
+        title: "League Rivals — repeal?",
+        detail: "Ratified 2022 (rivals play each other in Week 1 and the final week of the regular season), never enforced in scheduling. Ballot: repeal the rule? A 'No' vote requires the commissioner to set Week 1 and final-week matchups against each team's designated rival for 2026. A 'Yes' vote strikes the rule from the Constitution.",
   },
   {
         title: "Trophy custody — formal language",
-        detail: "Chain of custody (see Buy-in, payouts & traditions) has run on informal agreement since 2024. Needs codified language and a vote this cycle.",
+        detail: "Ballot: adopt this custody order of operations — the reigning champion holds the trophy through the following season, then is responsible for delivering it to that season's last-place finisher (determined solely by regular-season standings; any loser's-bracket or consolation-tournament result has no bearing). The last-place finisher then has it engraved with the new champion's name and delivers it to that season's new champion, who holds it through the following season, repeating the cycle. The full handoff must be completed no later than that season's Super Bowl.",
   },
   {
         title: "Remove all computers for the draft — pen and paper only",
@@ -258,15 +258,15 @@ const DOCKET_2026 = [
   },
   {
         title: "Remove kicker, or require starting 2 QBs",
-        detail: "On the 2026 ballot. May already be barred by the three-strikes rule — see Governance notes.",
+        detail: "Ballot: eliminate the current kicker/single-QB scoring structure in favor of a different format? If this passes, a follow-up vote forces a binary choice between exactly two implementations: (A) remove the kicker roster spot entirely, or (B) require two starting quarterbacks. If this fails, no change is made and no follow-up vote occurs. May already be barred by the three-strikes rule — see Governance notes.",
   },
   {
         title: "Most Points For gets the 6th playoff spot",
         detail: "If not already in the top 6. On the 2026 ballot. Not yet decided.",
   },
   {
-        title: "Weekly high-scorer bonus",
-        detail: "Top scorer of the week earns bonus money, including postseason. On the 2026 ballot. Not yet decided. If adopted, the full payout structure needs to be adjusted to account for it.",
+        title: "Weekly high-scorer bonus — Week 18",
+        detail: "Ballot: add a weekly high-score bonus payout for Week 18, on top of the existing $40/week bonus currently paid across 17 weeks. If this passes, a follow-up vote determines which existing payout(s) are reduced to fund the new Week 18 bonus, since the total payout pool doesn't grow automatically.",
   },
   {
         title: "Cap keepers at 5",
