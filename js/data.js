@@ -233,7 +233,7 @@ const CONSTITUTION_ARTICLES = [
         notes: [
                 "Three-strikes rule ratified 2022.",
                 "† Threshold isn't stated in the source document — pending Mike's confirmation of the real number.",
-                "† The source document labels the 2024 kicker-removal rejection \"SECOND STRIKE.\" If strikes started counting at the 2022 rule itself, 2024 would be strike three and bar this year's kicker proposal outright. Mike believes only two attempts have occurred since the rule took effect, making this year's the deciding third — worth settling before the vote goes out.",
+                "† The source document labels the 2024 kicker-removal rejection \"SECOND STRIKE.\" A 2026 kicker/2-QB proposal was drafted but rescinded before going to a vote, so this didn't end up mattering this cycle — worth resolving before any future kicker-related proposal is raised, since the strike count is still ambiguous.",
                 "Tied-vote-as-rejection precedent set 2017.",
               ],
   },
@@ -255,10 +255,6 @@ const DOCKET_2026 = [
   {
         title: "Remove all computers for the draft — pen and paper only",
         detail: "On the 2026 ballot. Not yet decided.",
-  },
-  {
-        title: "Remove kicker, or require starting 2 QBs",
-        detail: "Ballot: eliminate the current kicker/single-QB scoring structure in favor of a different format? If this passes, a follow-up vote forces a binary choice between exactly two implementations: (A) remove the kicker roster spot entirely, or (B) require two starting quarterbacks. If this fails, no change is made and no follow-up vote occurs. May already be barred by the three-strikes rule — see Governance notes.",
   },
   {
         title: "Most Points For gets the 6th playoff spot",
@@ -391,7 +387,7 @@ const PROPOSAL_HISTORY = [
         effectiveSeason: 2026,
         proposals: [
           { text: "Remove all computers for the draft — pen and paper only", status: "pending" },
-          { text: "Remove kicker, or require starting 2 QBs", status: "pending" },
+          { text: "Remove kicker, or require starting 2 QBs", status: "rescinded" },
           { text: "Most Points For in the league gets the 6th playoff spot if not already in the top 6", status: "pending" },
           { text: "Top scorer of the week gets bonus dollars, including postseason", status: "pending" },
           { text: "Cap the maximum number of keepers at 5", status: "pending" },
