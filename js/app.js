@@ -293,6 +293,7 @@ function statusBadge(status) {
               rejected: { label: "Rejected", cls: "badge-rejected" },
               tied_rejected: { label: "Tied / rejected", cls: "badge-rejected" },
               pending: { label: "Pending vote", cls: "badge-pending" },
+            rescinded: { label: "Rescinded", cls: "badge-rejected" },
       };
       const m = map[status] || { label: status, cls: "" };
       return `<span class="status-badge ${m.cls}">${m.label}</span>`;
