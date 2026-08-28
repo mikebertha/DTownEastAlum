@@ -254,11 +254,11 @@ const DOCKET_2026 = [
   },
   {
         title: "Remove all computers for the draft — pen and paper only",
-        detail: "On the 2026 ballot. Not yet decided.",
+        detail: "Ballot: require the live draft to be conducted with pen and paper only — no computers, phones, or devices allowed at the table?",
   },
   {
         title: "Most Points For gets the 6th playoff spot",
-        detail: "If not already in the top 6. On the 2026 ballot. Not yet decided.",
+        detail: "Ballot: award the 6th and final playoff spot to the league's Most Points For team, if that team isn't already in the top 6 by record?",
   },
   {
         title: "Weekly high-scorer bonus — Week 18",
@@ -266,15 +266,15 @@ const DOCKET_2026 = [
   },
   {
         title: "Cap keepers at 5",
-        detail: "On the 2026 ballot. Not yet decided.",
+        detail: "Ballot: cap the maximum number of keepers any owner can designate in a season at 5?",
   },
   {
         title: "Lock next season's draft budget from trades until Week 7",
-        detail: "Would bar trading next season's budget money until the start of league Week 7. On the 2026 ballot. Not yet decided.",
+        detail: "Ballot: bar trading next season's draft budget money until the start of league Week 7?",
   },
   {
         title: "Flat-point field goal scoring",
-        detail: "Proposed given the influx of long kicks from the new footballs: FG up to 60 yards = 3 pts, 60+ yards = 4 pts, missed FG = -1 — replacing the current 10 yds/pt scoring. On the 2026 ballot. Not yet decided.",
+        detail: "Ballot: replace the current 10 yds/pt field goal scoring with flat-point scoring — FG up to 60 yards = 3 pts, 60+ yards = 4 pts, missed FG = -1 — given the influx of long kicks from the new footballs?",
   },
   ];
 
