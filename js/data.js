@@ -4,18 +4,18 @@
 // doc is built.
 
 const OWNERS = [
-  { slug: "brett-mariani", name: "Brett Mariani", seasons: 18, record: "141-103-1", winPct: 57.8, pf: 28789.2, pa: 27832.4, playoffs: 9, finals: 2, titles: 1, runnerUp: 2, third: 2, highScore: 211.33, team2025: "Eskimo Brothers" },
+  { slug: "brett-mariani", name: "Brett Mariani", seasons: 18, record: "141-103-1", winPct: 57.8, pf: 28789.2, pa: 27832.4, playoffs: 10, finals: 3, titles: 1, runnerUp: 2, third: 2, highScore: 211.33, team2025: "Eskimo Brothers" },
   { slug: "greg-yayac", name: "Greg Yayac", seasons: 18, record: "138-105-2", winPct: 56.7, pf: 28930.6, pa: 27836.0, playoffs: 10, finals: 5, titles: 2, runnerUp: 3, third: 1, highScore: 206.75, team2025: "Thug Lifo" },
   { slug: "colin-maxwell", name: "Colin Maxwell", seasons: 18, record: "133-110-2", winPct: 54.7, pf: 27970.0, pa: 27488.0, playoffs: 7, finals: 3, titles: 1, runnerUp: 2, third: 1, highScore: 214.44, team2025: "CeeDeez Nuts" },
   { slug: "austen-musso", name: "Austen Musso", seasons: 18, record: "121-122-2", winPct: 49.8, pf: 28256.3, pa: 28124.5, playoffs: 10, finals: 3, titles: 1, runnerUp: 2, third: 4, highScore: 203.15, team2025: "Nowhere to go but up" },
-  { slug: "chris-mcfarland", name: "Chris McFarland", seasons: 15, record: "100-102-1", winPct: 49.5, pf: 22920.3, pa: 23292.1, playoffs: 6, finals: 5, titles: 3, runnerUp: 2, third: 1, highScore: 189.70, team2025: "Return of the Mac" },
+  { slug: "chris-mcfarland", name: "Chris McFarland", seasons: 15, record: "100-102-1", winPct: 49.5, pf: 22920.3, pa: 23292.1, playoffs: 7, finals: 6, titles: 4, runnerUp: 2, third: 1, highScore: 189.70, team2025: "Return of the Mac" },
   { slug: "jon-bradley", name: "Jon Bradley", seasons: 17, record: "112-115-4", winPct: 49.4, pf: 26271.9, pa: 26675.2, playoffs: 9, finals: 2, titles: 1, runnerUp: 1, third: 4, highScore: 196.70, team2025: "Broboken No Jokin" },
   { slug: "bobby-mainello", name: "Bob Mainello", seasons: 18, record: "119-124-2", winPct: 49.0, pf: 27825.2, pa: 27737.9, playoffs: 9, finals: 2, titles: 2, runnerUp: 0, third: 2, highScore: 190.30, team2025: "GoLong Hellen Keller" },
-  { slug: "mike-bertha", name: "Mike Bertha", seasons: 18, record: "119-124-2", winPct: 49.0, pf: 27494.3, pa: 27559.8, playoffs: 7, finals: 4, titles: 2, runnerUp: 3, third: 1, highScore: 202.70, team2025: "JBLA" },
-  { slug: "tony-yacenda", name: "Tony Yacenda", seasons: 18, record: "118-126-1", winPct: 48.4, pf: 27328.1, pa: 27882.7, playoffs: 7, finals: 2, titles: 2, runnerUp: 1, third: 1, highScore: 207.00, team2025: "Playoff Dark Horse" },
+  { slug: "mike-bertha", name: "Mike Bertha", seasons: 18, record: "119-124-2", winPct: 49.0, pf: 27494.3, pa: 27559.8, playoffs: 8, finals: 5, titles: 2, runnerUp: 3, third: 1, highScore: 202.70, team2025: "JBLA" },
+  { slug: "tony-yacenda", name: "Tony Yacenda", seasons: 18, record: "118-126-1", winPct: 48.4, pf: 27328.1, pa: 27882.7, playoffs: 8, finals: 3, titles: 2, runnerUp: 1, third: 1, highScore: 207.00, team2025: "Playoff Dark Horse" },
   { slug: "james-snyder", name: "James Snyder", seasons: 15, record: "96-106-1", winPct: 47.5, pf: 23880.1, pa: 23837.4, playoffs: 3, finals: 1, titles: 1, runnerUp: 0, third: 1, highScore: 191.20, team2025: "Drafted & Managed With AI" },
   { slug: "justin-claffey", name: "Justin Claffey", seasons: 18, record: "114-129-2", winPct: 46.9, pf: 27237.9, pa: 27738.5, playoffs: 7, finals: 5, titles: 4, runnerUp: 1, third: 0, highScore: 192.51, team2025: "Black Swans" },
-  { slug: "dave-orr", name: "David Orr", seasons: 18, record: "106-137-2", winPct: 43.7, pf: 27402.0, pa: 28341.0, playoffs: 2, finals: 2, titles: 2, runnerUp: 1, third: 0, highScore: 207.15, team2025: "A Team Has No Name" },
+  { slug: "dave-orr", name: "David Orr", seasons: 18, record: "106-137-2", winPct: 43.7, pf: 27402.0, pa: 28341.0, playoffs: 3, finals: 3, titles: 2, runnerUp: 1, third: 0, highScore: 207.15, team2025: "A Team Has No Name" },
   ];
 
 const BUDGETS_2026 = {
