@@ -14,7 +14,7 @@ const OWNERS = [
   { slug: "mike-bertha", name: "Mike Bertha", seasons: 18, record: "119-124-2", winPct: 49.0, pf: 27494.3, pa: 27559.8, playoffs: 8, finals: 5, titles: 2, runnerUp: 3, third: 1, highScore: 202.70, team2025: "JBLA" },
   { slug: "tony-yacenda", name: "Tony Yacenda", seasons: 18, record: "118-126-1", winPct: 48.4, pf: 27328.1, pa: 27882.7, playoffs: 8, finals: 3, titles: 2, runnerUp: 1, third: 1, highScore: 207.00, team2025: "Playoff Dark Horse" },
   { slug: "james-snyder", name: "James Snyder", seasons: 15, record: "96-106-1", winPct: 47.5, pf: 23880.1, pa: 23837.4, playoffs: 3, finals: 1, titles: 1, runnerUp: 0, third: 1, highScore: 191.20, team2025: "Drafted & Managed With AI" },
-  { slug: "justin-claffey", name: "Justin Claffey", seasons: 18, record: "114-129-2", winPct: 46.9, pf: 27237.9, pa: 27738.5, playoffs: 7, finals: 5, titles: 4, runnerUp: 1, third: 0, highScore: 192.51, team2025: "Black Swans" },
+  { slug: "justin-claffey", name: "Justin Claffey", seasons: 18, record: "114-129-2", winPct: 46.9, pf: 27237.9, pa: 27738.5, playoffs: 8, finals: 6, titles: 5, runnerUp: 1, third: 0, highScore: 192.51, team2025: "Black Swans" },
   { slug: "dave-orr", name: "David Orr", seasons: 18, record: "106-137-2", winPct: 43.7, pf: 27402.0, pa: 28341.0, playoffs: 3, finals: 3, titles: 2, runnerUp: 1, third: 0, highScore: 207.15, team2025: "A Team Has No Name" },
   ];
 
