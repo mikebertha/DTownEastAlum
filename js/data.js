@@ -20,8 +20,65 @@ const OWNERS = [
 
 const BUDGETS_2026 = {
     "jon-bradley": 214, "james-snyder": 230, "austen-musso": 173, "dave-orr": 226,
-    "tony-yacenda": 174, "brett-mariani": 190, "justin-claffey": 206, "chris-mcfarland": 223,
+    "tony-yacenda": 174, "brett-mariani": 188, "justin-claffey": 206, "chris-mcfarland": 223,
     "greg-yayac": 196, "bobby-mainello": 200, "colin-maxwell": 200, "mike-bertha": 170,
+};
+
+// 2026 keepers, confirmed by Mike after the deadline. Each salary is the
+// final keeper fee already applied (prior salary + (6 + total keepers that
+// owner designated)), not the player's original draft price. Cross-checked
+// against BUDGETS_2026 above: for every owner, BUDGETS_2026[slug] minus the
+// sum of their keeper salaries here matches the live/remaining draft budget
+// Mike reported directly - that's what surfaced the $2 brett-mariani
+// correction above (188, not the previously-recorded 190).
+const KEEPERS_2026 = {
+    "brett-mariani": [
+      { player: "D'Andre Swift", salary: 18 },
+      { player: "Josh Allen", salary: 24 },
+        ],
+    "dave-orr": [
+      { player: "Nico Collins", salary: 26 },
+      { player: "Bhayshul Tuten", salary: 14 },
+        ],
+    "justin-claffey": [{ player: "Jayden Reed", salary: 8 }],
+    "jon-bradley": [
+      { player: "Ja'Marr Chase", salary: 54 },
+      { player: "DeVonta Smith", salary: 28 },
+      { player: "Travis Etienne", salary: 16 },
+      { player: "Colston Loveland", salary: 15 },
+        ],
+    "tony-yacenda": [],
+    "james-snyder": [
+      { player: "Chase Brown", salary: 31 },
+      { player: "Luther Burden", salary: 12 },
+      { player: "Quinshon Judkins", salary: 12 },
+        ],
+    "mike-bertha": [
+      { player: "Bijan Robinson", salary: 80 },
+      { player: "De'Von Achane", salary: 30 },
+      { player: "Jaylen Waddle", salary: 22 },
+      { player: "Zay Flowers", salary: 26 },
+        ],
+    "greg-yayac": [
+      { player: "Jahmyr Gibbs", salary: 69 },
+      { player: "Malik Nabers", salary: 36 },
+      { player: "Rashee Rice", salary: 29 },
+      { player: "Chris Olave", salary: 19 },
+        ],
+    "austen-musso": [
+      { player: "Kenneth Walker III", salary: 26 },
+      { player: "Javonte Williams", salary: 11 },
+      { player: "Brock Bowers", salary: 26 },
+        ],
+    "bobby-mainello": [
+      { player: "Dak Prescott", salary: 17 },
+      { player: "Jaylen Warren", salary: 16 },
+        ],
+    "chris-mcfarland": [{ player: "Jordan Addison", salary: 10 }],
+    "colin-maxwell": [
+      { player: "Harold Fannin", salary: 9 },
+      { player: "Cam Skattebo", salary: 17 },
+        ],
 };
 
 const DEFENDING_CHAMPION = "mike-bertha";
@@ -188,26 +245,33 @@ const CONSTITUTION_ARTICLES = [
   {
         title: "Scoring — kickers & defense",
         rows: [
-          { label: "Kicker", value: "PAT = 1 · field goals scored by total yards, 10 yds/pt" },
+          { label: "Kicker", value: "PAT = 1 · FG up to 60 yds = 3 · FG 60+ yds = 4 · Missed FG = -1" },
           { label: "Defense/ST", value: "Sack = 1 · INT = 2 · Fumble rec. = 2 · TD = 6 · Safety = 6 · Block kick = 2" },
           { label: "Points allowed", value: "0=10, 1-6=7, 7-13=4, 14-20=1, 21-27=0, 28+=0 (never negative)" },
               ],
-        notes: ["Decimal kicker scoring ratified 2020 (previously whole points only)."],
+        notes: [
+                "Decimal kicker scoring ratified 2020 (previously whole points only).",
+                "Flat-point FG scoring ratified 2025 (7-5), for the 2026 season — replaces the old 10 yds/pt model, prompted by an influx of long kicks from the new footballs.",
+              ],
   },
   {
         title: "Playoffs",
         rows: [
           { label: "Format", value: "Top 6 teams · weeks 15, 16, 17" },
           { label: "Tiebreaker", value: "Best regular-season record vs. opponent wins" },
+          { label: "Homefield bonus", value: "+3 points to the higher seed in each playoff matchup" },
               ],
-        notes: ["Moved from a 4-team to 6-team field in 2019."],
+        notes: [
+                "Moved from a 4-team to 6-team field in 2019.",
+                "Homefield bonus has been a standing rule for years but wasn't previously documented here — confirmed by Mike during the 2025 ballot review.",
+              ],
   },
   {
         title: "Buy-in, payouts & traditions",
         rows: [
           { label: "Buy-in", value: "$200 per owner" },
           { label: "Last-place penalty", value: "\"The Combine\" — the last-place finisher completes the full NFL combine testing process" },
-          { label: "Trophy custody", value: "Reigning champion holds the trophy through the following season. When a new champion is crowned, the outgoing champion delivers it to that season's last-place finisher, who has it engraved and delivers it to the new champion." },
+          { label: "Trophy custody", value: "Reigning champion holds the trophy through the following season, then delivers it to that season's last-place finisher (by regular-season record only — loser's-bracket/consolation results don't count). The last-place finisher has it engraved and delivers it to the new champion no later than that season's Super Bowl." },
               ],
         payouts: [
           { label: "Champion", amount: 1100 },
@@ -219,7 +283,8 @@ const CONSTITUTION_ARTICLES = [
         notes: [
                 "$200 buy-in / doubled payouts ratified 2024, first effective this season.",
                 "Last-place penalty ('The Combine') ratified 2024 — Mike doesn't expect strict follow-through in practice.",
-                "Trophy custody ratified in principle 2024; the exact hand-off order was worked out informally afterward, not itself voted on (see On the docket below).",
+                "Trophy custody ratified in principle 2024; the formal order of operations above (Super Bowl deadline, regular-season-only definition of last place) was ratified 2025 (10-2), for the 2026 season.",
+                "A separate 2025 proposal to add a Week 18 weekly-high-score bonus (funded by trimming an existing payout) was rejected 10-2 — the payout table above is unchanged.",
               ],
   },
   {
@@ -243,40 +308,10 @@ const CONSTITUTION_ARTICLES = [
 // cycle - distinct from the ratified articles above. This is the section
 // that keeps the document "living" rather than a static snapshot. Kept
 // terse by design — one line of what it is, one line of what's needed.
-const DOCKET_2026 = [
-  {
-        title: "League Rivals — repeal?",
-        detail: "Ratified 2022 (rivals play each other in Week 1 and the final week of the regular season), never enforced in scheduling. Ballot: repeal the rule? A 'No' vote requires the commissioner to set Week 1 and final-week matchups against each team's designated rival for 2026. A 'Yes' vote strikes the rule from the Constitution.",
-  },
-  {
-        title: "Trophy custody — formal language",
-        detail: "Ballot: adopt this custody order of operations — the reigning champion holds the trophy through the following season, then is responsible for delivering it to that season's last-place finisher (determined solely by regular-season standings; any loser's-bracket or consolation-tournament result has no bearing). The last-place finisher then has it engraved with the new champion's name and delivers it to that season's new champion, who holds it through the following season, repeating the cycle. The full handoff must be completed no later than that season's Super Bowl.",
-  },
-  {
-        title: "Remove all computers for the draft — pen and paper only",
-        detail: "Ballot: require the live draft to be conducted with pen and paper only — no computers, phones, or devices allowed at the table?",
-  },
-  {
-        title: "Most Points For gets the 6th playoff spot",
-        detail: "Ballot: award the 6th and final playoff spot to the league's Most Points For team, if that team isn't already in the top 6 by record?",
-  },
-  {
-        title: "Weekly high-scorer bonus — Week 18",
-        detail: "Ballot: add a weekly high-score bonus payout for Week 18, on top of the existing $40/week bonus currently paid across 17 weeks. If this passes, a follow-up vote determines which existing payout(s) are reduced to fund the new Week 18 bonus, since the total payout pool doesn't grow automatically.",
-  },
-  {
-        title: "Cap keepers at 5",
-        detail: "Ballot: cap the maximum number of keepers any owner can designate in a season at 5?",
-  },
-  {
-        title: "Lock next season's draft budget from trades until Week 7",
-        detail: "Ballot: bar trading next season's draft budget money until the start of league Week 7?",
-  },
-  {
-        title: "Flat-point field goal scoring",
-        detail: "Ballot: replace the current 10 yds/pt field goal scoring with flat-point scoring — FG up to 60 yards = 3 pts, 60+ yards = 4 pts, missed FG = -1 — given the influx of long kicks from the new footballs?",
-  },
-  ];
+// The full 2025 cycle (8 items) was voted on and resolved in full ahead of
+// the 2026 draft - see the 2025 entry in PROPOSAL_HISTORY below for final
+// tallies. Nothing new has been nominated for the next cycle yet.
+const DOCKET_2026 = [];
 
 // Full paper trail, 2017-2025, transcribed from the league's own
 // color-coded "Fantasy Rules for Vote" record (green = PASSED, red =
@@ -356,7 +391,7 @@ const PROPOSAL_HISTORY = [
           { text: "Interceptions -2 for QB/offensive player (was -1), to match the +2 defensive reward", status: "passed" },
           { text: "Go back to a snake draft", status: "rejected" },
           { text: "No limit on transactions per week", status: "rejected" },
-          { text: "League Rivals — schedule opens against a designated rival in week 1, rematch in week 12 (\"rivalry week\"); rivals set by the commissioner based on prior-season events", status: "passed" },
+          { text: "League Rivals — schedule opens against a designated rival in week 1, rematch in week 12 (\"rivalry week\"); rivals set by the commissioner based on prior-season events (repealed 2025, 7-5 — see 2025 proposals below)", status: "passed" },
               ],
   },
   {
@@ -386,13 +421,15 @@ const PROPOSAL_HISTORY = [
         seasonVoted: 2025,
         effectiveSeason: 2026,
         proposals: [
-          { text: "Remove all computers for the draft — pen and paper only", status: "pending" },
+          { text: "Repeal the League Rivals rule (Week 1 / final-week designated-rival matchups) — 7-5", status: "passed" },
+          { text: "Formalize trophy custody order of operations, with a Super Bowl deadline and a regular-season-only definition of last place — 10-2", status: "passed" },
+          { text: "Remove all computers for the draft — pen and paper only — 11-1", status: "rejected" },
           { text: "Remove kicker, or require starting 2 QBs", status: "rescinded" },
-          { text: "Most Points For in the league gets the 6th playoff spot if not already in the top 6", status: "pending" },
-          { text: "Top scorer of the week gets bonus dollars, including postseason", status: "pending" },
-          { text: "Cap the maximum number of keepers at 5", status: "pending" },
-          { text: "Forbid trading next season's draft budget until the start of league Week 7", status: "pending" },
-          { text: "Flat-point field goal scoring: FG up to 60 yds = 3, 60+ yds = 4, missed FG = -1 (replacing 10 yds/pt)", status: "pending" },
+          { text: "Most Points For in the league gets the 6th playoff spot if not already in the top 6 — 7-5", status: "rejected" },
+          { text: "Top scorer of the week gets bonus dollars, including postseason (Week 18 high-scorer bonus) — 10-2", status: "rejected" },
+          { text: "Cap the maximum number of keepers at 5 — 6-6", status: "tied_rejected" },
+          { text: "Forbid trading next season's draft budget until the start of league Week 7 — 10-2", status: "rejected" },
+          { text: "Flat-point field goal scoring: FG up to 60 yds = 3, 60+ yds = 4, missed FG = -1 (replacing 10 yds/pt) — 7-5", status: "passed" },
               ],
   },
   ];
